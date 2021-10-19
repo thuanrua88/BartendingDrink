@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ctr_detail_category"
+    android:background="#F3F1F1"
+    android:layout_marginBottom="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ItemDetailCategoryFragment">
+
+    <ImageView
+        android:id="@+id/imv_cover"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:src="@drawable/recipes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title_food"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="Cake Marbella"
+        android:layout_marginStart="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/imv_cover"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_desc_food"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:text="Cras blardit consecuat sapen ut cursus"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@+id/imv_cover"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_food" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$2.13"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/layout_red"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="16dp" />
+
+    <TextView
+        android:id="@+id/tv_add_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/orange_button_background"
+        android:padding="10dp"
+        android:text="+ ADD"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tv_desc_food"
+        app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

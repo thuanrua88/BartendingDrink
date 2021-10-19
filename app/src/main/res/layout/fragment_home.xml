@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="70dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context=".fragment.HomeFragment">
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/ln_post"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:src="@drawable/ic_user_2"
+                                android:layout_width="25dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_height="25dp"
+                                android:id="@+id/imv_avt"/>
+                            <EditText
+                                android:paddingLeft="15sp"
+                                android:id="@+id/edt_status"
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/rounded_edit"
+                                android:textSize="14sp"
+                                android:hint="What's are you think?"/>
+
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/line"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:src="@drawable/ic_video"
+                                    app:tint="@color/layout_red"
+                                    />
+                                <TextView
+                                    android:layout_marginStart="10dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Video"
+                                    android:layout_gravity="center"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:src="@drawable/ic_img"
+                                    app:tint="@android:color/holo_green_dark"
+                                    />
+                                <TextView
+                                    android:layout_marginStart="10dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Images"
+                                    android:layout_gravity="center"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:src="@drawable/ic_emotion"
+                                    app:tint="@color/layout_green"
+                                    />
+                                <TextView
+                                    android:layout_marginStart="10dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Status/Activity"
+                                    android:layout_gravity="center"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:id="@+id/rl_post"/>
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/vp_banner"/>
+
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/top_categories"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ed_search" />
+
+            <com.mlsdev.animatedrv.AnimatedRecyclerView
+                android:id="@+id/rv_categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:layoutAnimation="@anim/layout_animation_from_bottom"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
+                android:paddingEnd="16dp"
+                app:animationDuration="1000"
+                app:layoutManagerOrientation="horizontal"
+                app:layoutManagerReverse="false"
+                app:layoutManagerType="linear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_category" />
+
+            <TextView
+                android:id="@+id/tv_popular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Popular"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.mlsdev.animatedrv.AnimatedRecyclerView
+                android:id="@+id/rv_popular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:layoutAnimation="@anim/layout_animation_from_scale"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
+                android:paddingEnd="16dp"
+                app:animationDuration="3000"
+                app:layoutManagerOrientation="vertical"
+                app:layoutManagerReverse="false"
+                app:layoutManagerType="linear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_popular" />
+
+            <TextView
+
+                android:id="@+id/tv_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:text="Blogers"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_categories" />
+
+            <com.mlsdev.animatedrv.AnimatedRecyclerView
+                android:id="@+id/rv_blogers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:layoutAnimation="@anim/layout_animation_from_scale"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
+                android:paddingEnd="16dp"
+                app:animationDuration="2000"
+                app:layoutManagerOrientation="horizontal"
+                app:layoutManagerReverse="false"
+                app:layoutManagerType="linear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_event" />
+
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                android:id="@+id/ctr_banner"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="150dp"-->
+            <!--                android:layout_marginStart="16dp"-->
+            <!--                android:layout_marginTop="16dp"-->
+            <!--                android:layout_marginEnd="16dp"-->
+            <!--                android:background="@drawable/light_orange_back"-->
+            <!--                android:paddingTop="20dp"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintHorizontal_bias="0.0"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/rv_event">-->
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/img_delivery"-->
+            <!--                    android:layout_width="200dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:src="@drawable/image_banner"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/tv_banner"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="24dp"-->
+            <!--                    android:layout_marginLeft="24dp"-->
+            <!--                    android:layout_marginTop="8dp"-->
+            <!--                    android:text="Free Delivery"-->
+            <!--                    android:textColor="@color/black"-->
+            <!--                    android:textSize="20sp"-->
+            <!--                    android:textStyle="bold"-->
+            <!--                    app:layout_constraintStart_toEndOf="@id/img_delivery"-->
+            <!--                    app:layout_constraintTop_toTopOf="@id/img_delivery" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/tv_time"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="May9- June 10"-->
+            <!--                    android:textColor="#000000"-->
+            <!--                    android:textSize="18sp"-->
+            <!--                    app:layout_constraintEnd_toEndOf="@+id/tv_banner"-->
+            <!--                    app:layout_constraintStart_toStartOf="@+id/tv_banner"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@+id/tv_banner" />-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:background="@drawable/orange_button_background"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintEnd_toEndOf="@id/tv_time"-->
+            <!--                    app:layout_constraintStart_toStartOf="@id/tv_time"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@id/tv_time">-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="16dp"-->
+            <!--                        android:layout_marginTop="8dp"-->
+            <!--                        android:layout_marginEnd="16dp"-->
+            <!--                        android:layout_marginBottom="8dp"-->
+            <!--                        android:text="Order Now"-->
+            <!--                        android:textColor="#ffffff"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/tv_material"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Trending"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textStyle="bold"-->
+            <!--                android:textSize="20sp"-->
+            <!--                android:layout_marginStart="16dp"-->
+            <!--                android:layout_marginTop="16dp"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/ctr_banner"-->
+            <!--                android:layout_marginLeft="16dp"-->
+            <!--                app:layout_constraintStart_toStartOf="parent" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/tv_show_all_material"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                android:layout_marginEnd="16dp"-->
+            <!--                android:text="@string/show_all"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="15sp"-->
+            <!--                app:drawableEndCompat="@drawable/ic_arrow_right"-->
+            <!--                app:layout_constraintRight_toLeftOf="@id/tv_material"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/ctr_banner"-->
+            <!--                app:drawableRightCompat="@drawable/ic_arrow_right"-->
+            <!--                android:layout_marginRight="16dp" />-->
+
+
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/rv_material"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:clipToPadding="false"-->
+            <!--                android:paddingStart="16dp"-->
+            <!--                android:paddingLeft="16dp"-->
+            <!--                android:paddingEnd="16dp"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/tv_material" />-->
+
+
+        </LinearLayout>
+
+        <!--<TextView
+            android:id="@+id/tv_meals_courses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meals and courses"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/rv_popular"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.mlsdev.animatedrv.AnimatedRecyclerView
+            android:layoutAnimation="@anim/layout_animation_from_scale"
+            app:animationDuration="3000"
+            app:layoutManagerReverse="false"
+            app:layoutManagerType="linear"
+            app:layoutManagerOrientation="horizontal"
+            android:id="@+id/rv_meal_courses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:clipToPadding="false"
+            app:layout_constraintTop_toBottomOf="@+id/tv_meals_courses"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingLeft="16dp" />
+
+        <TextView
+            android:id="@+id/tv_special"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Special Diets"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/rv_meal_courses"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.mlsdev.animatedrv.AnimatedRecyclerView
+            android:layoutAnimation="@anim/layout_animation_from_scale"
+            app:animationDuration="3000"
+            app:layoutManagerReverse="false"
+            app:layoutManagerType="linear"
+            app:layoutManagerOrientation="horizontal"
+            android:id="@+id/rv_special_diets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:clipToPadding="false"
+            app:layout_constraintTop_toBottomOf="@+id/tv_special"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingLeft="16dp" />
+
+        <TextView
+            android:id="@+id/tv_world"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="World flavours"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/rv_special_diets"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.mlsdev.animatedrv.AnimatedRecyclerView
+            android:layoutAnimation="@anim/layout_animation_from_scale"
+            app:animationDuration="3000"
+            app:layoutManagerReverse="false"
+            app:layoutManagerType="linear"
+            app:layoutManagerOrientation="horizontal"
+            android:id="@+id/rv_world_flavours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:clipToPadding="false"
+            app:layout_constraintTop_toBottomOf="@+id/tv_world"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingLeft="16dp" />-->
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

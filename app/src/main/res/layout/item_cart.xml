@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/card_background"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:elevation="2dp">
+
+    <ImageView
+        android:id="@+id/imv_cover"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:src="@drawable/recipes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title_food"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="Cake Marbella"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginStart="15dp"
+        app:layout_constraintLeft_toRightOf="@+id/imv_cover"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ctr_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:paddingStart="20dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/imv_cover"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_food">
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_minus"
+            android:id="@+id/imv_minus"
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/tv_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/card_background"
+            android:gravity="center_horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/imv_minus"
+            app:layout_constraintTop_toTopOf="parent" />
+        <RelativeLayout
+            android:background="@drawable/rounded_butotn"
+            android:layout_width="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="25dp">
+            <ImageView
+                app:tint="@color/black"
+                android:padding="5dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_add"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/imv_add"
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:background="@drawable/rounded_butotn"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent" />
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_delete"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:text="$2.13"
+        android:textColor="@color/layout_red"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/ctr_add"
+        app:layout_constraintTop_toBottomOf="@+id/img_delete" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/card_background"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:context=".Activity.FoodDetailActivity">
+
+    <ScrollView
+        android:scrollbarStyle="outsideInset"
+        android:padding="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/left_arrow"/>
+
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imv_cover"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/recipes" />
+            <LinearLayout
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RatingBar
+                    android:id="@+id/ratingbar"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:scaleX=".5"
+                    android:scaleY=".5"
+                    android:stepSize="0.1"
+                    android:rating="5"
+                    android:theme="@style/ratingbar"/>
+                <ImageView
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:tint="@color/orange"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/heart"/>
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_comment"
+                    app:tint="@color/gray"
+                    android:id="@+id/imv_love"/>
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/imv_zalo"
+                    android:layout_margin="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_zalo"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:maxLines="2"
+                android:id="@+id/tv_name_food"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Soda Soup with Shrimp and Greens"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                />
+
+            <LinearLayout
+                android:layout_gravity="start"
+                android:id="@+id/ctr_food"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_wall_clock"
+                    android:layout_width="20dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/wall_clock"
+                    app:layout_constraintEnd_toEndOf="@id/ctr_food"
+                    app:layout_constraintHorizontal_bias="0.325"
+                    app:layout_constraintStart_toStartOf="@id/ctr_food"
+                    app:layout_constraintTop_toTopOf="@id/ctr_food" />
+
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="50 min"
+                    android:textColor="@color/black"
+                    app:layout_constraintLeft_toRightOf="@+id/img_wall_clock"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/img_star"
+                    android:layout_width="20dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/star"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_time"
+                    app:layout_constraintTop_toTopOf="@id/ctr_food"
+                    android:layout_marginLeft="25dp" />
+
+                <TextView
+                    android:id="@+id/tv_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="19dp"
+                    android:text="4.8"
+                    android:textColor="@color/black"
+                    app:layout_constraintLeft_toRightOf="@+id/img_star"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginLeft="5dp" />
+
+
+
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:layout_marginStart="45dp"-->
+<!--                    android:layout_marginTop="18dp"-->
+<!--                    android:paddingTop="5dp"-->
+<!--                    android:paddingBottom="10dp"-->
+<!--                    android:paddingStart="20dp"-->
+<!--                    android:paddingEnd="20dp"-->
+<!--                    android:background="@drawable/orange_button_background"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/tv_time"-->
+<!--                    app:layout_constraintLeft_toRightOf="@+id/tv_fee"-->
+<!--                    android:layout_marginLeft="45dp">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_minus"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="-"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="18sp"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_number_order"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="1"-->
+<!--                        android:paddingStart="5dp"-->
+<!--                        android:paddingEnd="5dp"-->
+<!--                        android:background="@drawable/card_background"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        app:layout_constraintTop_toTopOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_plus"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="+"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="18sp"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent"/>-->
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            </LinearLayout>
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:id="@+id/tv_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$12"
+                android:gravity="center_horizontal"
+                android:textColor="@color/orange"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_time" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingredients"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/tv_ingredient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="10dp"
+                android:textSize="17sp"
+                android:background="@drawable/round_bg2"
+                android:text="Ingredient" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+            <TextView
+                android:id="@+id/tv_method"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="10dp"
+                android:background="@drawable/round_bg2"
+                android:text="Method"
+                android:paddingBottom="50dp"/>
+
+            <!--<LinearLayout
+                android:id="@+id/ln_add_to_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_bg"
+                android:layout_marginTop="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginBottom="50dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/btn_add_to_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Add To Card"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="120dp"
+                    android:layout_marginStart="120dp" />
+            </LinearLayout>-->
+
+
+
+        </LinearLayout>
+    </ScrollView>
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/rounded_butotn"
+        android:text="Add to card"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:textStyle="normal"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        app:iconTint="@color/white"
+        app:icon="@drawable/ic_shopping_cart"
+        android:id="@+id/btn_addToCart"/>
+
+
+</RelativeLayout>
